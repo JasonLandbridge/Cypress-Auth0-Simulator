@@ -200,6 +200,12 @@ cypress open
 See the scripts section in [package.json](./package.json) for various examples on the use of integrating
 with`start-server-and-test` command.
 
+## Step 6: Configure your localhost to use a https connection
+
+The Auth0 SDK's require a https connection to work. This can easily be setup by using [mkcert](https://github.com/FiloSottile/mkcert) to create a self-signed certificate for your localhost.
+
+A running example with setting up mkcert instruction can be found here at [@simulacrum/ui](../../packages/ui/README.md#running-https-services-from-localhost)
+
 The following commands are now available in your test suite:
 
 ## Commands
