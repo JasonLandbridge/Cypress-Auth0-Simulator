@@ -1,0 +1,44 @@
+{
+  "name": "@simulacrum/repository",
+  "version": "0.0.0",
+  "description": "Composable simulations for testing, development, and application previews",
+  "scripts": {
+    "clean": "npm run clean -ws",
+    "test": "npm run test -ws",
+    "build": "npm run prepack -ws",
+    "prepack": "npm run prepack -ws",
+    "lint": "npm run lint -ws -- --fix",
+    "build:tsc": "tsc -b ./tsconfig.packages.json",
+    "watch:tsc": "npm run build && \"$(npm bin)/tsc\" -b ./tsconfig.packages.json --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thefrontside/simulacrum.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "simulation",
+    "emulation"
+  ],
+  "author": "Charles Lowell <cowboyd@frontside.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thefrontside/simulacrum/issues"
+  },
+  "homepage": "https://github.com/thefrontside/simulacrum#readme",
+  "engines": {
+    "npm": ">=9"
+  },
+  "volta": {
+    "node": "18.17.1",
+    "npm": "10.0.0"
+  },
+  "devDependencies": {
+    "@effection/fetch": "^2.0.1",
+    "deepmerge": "^4.2.2",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1"
+  }
+}
