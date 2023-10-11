@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "types": [
       "cypress",
@@ -7,6 +6,7 @@
     ],
     "outDir": "dist",
     "baseUrl": "./src",
+    "esModuleInterop": true,
     "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types",
@@ -16,9 +16,4 @@
   "include": [
     "**/*.ts"
   ],
-  "references": [
-    {
-      "path": "../../packages/auth0/tsconfig.dist.json"
-    }
-  ]
 }
