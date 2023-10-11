@@ -1,12 +1,12 @@
 {
-  "name": "@simulacrum/auth0-cypress",
-  "version": "0.6.10",
-  "description": "Cypress simulacrum commands",
+  "name": "@jasonlandbridge/cypress-auth0-simulator",
+  "version": "1.0.0",
+  "description": "Auth0 integration for Cypress",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/thefrontside/simulacrum.git",
-  "author": "Frontside Engineering <engineering@frontside.com>",
+  "repository": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator.git",
+  "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -33,10 +33,10 @@
   ],
   "scripts": {
     "cypress:browser": "cypress open",
-    "start:server:cra": "cd ../../examples/create-react-app && npm install && npm run start",
-    "start:server:nextjs-auth0": "cd ../../examples/nextjs/nextjs-auth0 && npm install && npm run dev",
-    "start:server:auth0-react": "cd ../../examples/nextjs/auth0-react && npm install && npm run dev",
-    "start:server:auth0-vue": "cd ../../examples/vue/ && npm install && npm run serve",
+    "start:server:cra": "cd ./examples/create-react-app && npm install && npm run start",
+    "start:server:nextjs-auth0": "cd ./examples/nextjs/nextjs-auth0 && npm install && npm run dev",
+    "start:server:auth0-react": "cd ./examples/nextjs/auth0-react && npm install && npm run dev",
+    "start:server:auth0-vue": "cd ./examples/vue/ && npm install && npm run serve",
     "cypress:run": "npx cypress run --spec 'cypress/integration/*.ts'",
     "start:auth0": "PORT=4000 npx auth0-simulator",
     "test:auth0-vue:browser": "CYPRESS_TEST_MODE=auth0-vue npx start-server-and-test 'npm run start:server:auth0-vue' http-get://localhost:3000 'npm run start:auth0' http://localhost:4000 cypress:browser",
@@ -71,7 +71,4 @@
     "npm-run-all": "^4.1.5",
     "start-server-and-test": "2.0.1"
   },
-  "volta": {
-    "extends": "../../package.json"
-  }
 }
