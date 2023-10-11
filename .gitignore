@@ -4,3 +4,6 @@ dist
 dist-ui
 __generated__
 /.parcel-cache
+
+coverage
+cypress/videos
