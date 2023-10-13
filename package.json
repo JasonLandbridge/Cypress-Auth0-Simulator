@@ -52,7 +52,9 @@
     "build": "npm run prepack ",
     "prepack": "tsc --build tsconfig.dist.json ",
     "type-check": "tsc --noEmit",
-    "lint": "eslint \"cypress/**/*.ts\" --fix"
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
+    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts --fix"
+
   },
   "dependencies": {
     "@effection/atom": "2.0.7",
@@ -66,7 +68,14 @@
   "devDependencies": {
     "@simulacrum/client": "^0.5.4",
     "@types/auth0-js": "^9.21.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "cypress": "^13.3.0",
+    "eslint": "^8.51.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-promise": "^6.1.1",
     "npm-run-all": "^4.1.5",
     "start-server-and-test": "2.0.1",
     "typescript": "^5.2.2"
