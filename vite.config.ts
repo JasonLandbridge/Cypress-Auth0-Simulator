@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { builtinModules } from 'module';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 export const name = 'index';
 // Source: https://onderonur.netlify.app/blog/creating-a-typescript-library-with-vite/
@@ -24,5 +25,5 @@ export default defineConfig({
     },
   },
 
-  plugins: [dts()],
+  plugins: [dts(), nodePolyfills()],
 });
