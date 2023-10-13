@@ -1,3 +1,2 @@
-export * from './utils';
-export * from './commands';
+export { encrypt } from './utils';
 export * from './types';
