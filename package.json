@@ -22,7 +22,8 @@
   "typesVersions": {
     "*": {
       "*": [
-        "dist/index.d.ts"
+        "dist/index.d.ts",
+        "dist/utils/encrypt.d.ts"
       ]
     }
   },
@@ -63,13 +64,11 @@
     "jose": "^4.15.2"
   },
   "devDependencies": {
-    "@frontside/eslint-config": "^3.1.0",
-    "@frontside/tsconfig": "^3.0.0",
-    "@frontside/typescript": "^4.0.0",
     "@simulacrum/client": "^0.5.4",
     "@types/auth0-js": "^9.21.1",
     "cypress": "^13.3.0",
     "npm-run-all": "^4.1.5",
-    "start-server-and-test": "2.0.1"
+    "start-server-and-test": "2.0.1",
+    "typescript": "^5.2.2"
   }
 }
