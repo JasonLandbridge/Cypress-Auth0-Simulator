@@ -8,12 +8,8 @@
       "node"
     ],
     "noEmit": false,
-    "typeRoots": [
-      "node_modules/@types",
-      "node_modules/cypress/types"
-    ]
   },
   "exclude": [
-    "**/*.spec.ts"
+    "cypress/**/*.spec.ts"
   ]
 }
