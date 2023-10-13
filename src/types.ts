@@ -22,9 +22,9 @@ declare global {
 
       getUserTokens(person: Person): Chainable<Auth0Result & { scope: string }>;
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       task<T>(
         event: string,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         args?: any,
         options?: Partial<Loggable & Timeoutable>,
       ): Chainable<T>;
