@@ -17,6 +17,10 @@
     "./encrypt": {
       "import": "./dist/utils/encrypt.js",
       "require": "./dist/utils/encrypt.js"
+    },
+    "./commands": {
+      "import": "./dist/commands/index.js",
+      "require": "./dist/commands/index.js"
     }
   },
   "typesVersions": {
