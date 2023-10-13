@@ -1,14 +1,14 @@
 import { assert } from 'assert-ts';
-import { getConfig, getPersonAtomSlice } from '../../utils';
+import { cyLog, getConfig, getPersonAtomSlice } from '../../utils';
 
 export function login() {
   const { sessionCookieName, cookieSecret, audience } = getConfig();
 
   try {
     cy.getCookie(sessionCookieName).then((cookieValue) => {
-      cy.log(`cookie ${sessionCookieName} is ${cookieValue}`);
+      cyLog(`cookie ${sessionCookieName} is ${cookieValue}`);
       if (cookieValue) {
-        cy.log('Skip logging in again, session already exists');
+        cyLog('Skip logging in again, session already exists');
         return true;
       } else {
         cy.clearCookies();
@@ -21,7 +21,7 @@ export function login() {
         cy.getUserTokens(person).then((response) => {
           const { accessToken, expiresIn, idToken, scope } = response;
 
-          cy.log(`successfully called getUserTokens with ${person?.email}`);
+          cyLog(`successfully called getUserTokens with ${person?.email}`);
 
           assert(!!accessToken, 'no access token in login');
 
@@ -40,7 +40,7 @@ export function login() {
             };
 
             cy.task<string>('encrypt', payload).then((encryptedSession) => {
-              cy.log('successfully encrypted session');
+              cyLog('successfully encrypted session');
 
               cy.setCookie(sessionCookieName, encryptedSession);
             });

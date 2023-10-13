@@ -22,7 +22,7 @@ export function login() {
               ignoreCache: true,
             })
             .then((token) => {
-              cy.log(
+              cyLog(
                 `successfully logged in with token ${JSON.stringify(token)}`,
               );
               auth0Client.isAuthenticated().then((isAuthenticated) => {
