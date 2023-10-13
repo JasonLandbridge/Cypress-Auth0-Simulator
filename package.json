@@ -64,8 +64,8 @@
     "test:cra:browser": "CYPRESS_TEST_MODE=create-react-app npx start-server-and-test 'npm run start:server:cra' http://localhost:3000 'npm run start:auth0' http://localhost:4000 cypress:browser",
     "test:cra:headless": "CYPRESS_TEST_MODE=create-react-app npx start-server-and-test 'npm run start:server:cra' http://localhost:3000 'npm run start:auth0' http://localhost:4000 cypress:run",
     "test": "npm run test:auth0-react:headless && npm run test:nextjs-auth0:headless && npm run test:cra:headless && npm run test:auth0-vue:headless",
-    "build": "npm run prepack ",
-    "prepack": "tsc --build tsconfig.dist.json ",
+    "build": "vite build",
+    "build:preview": "npm pack --dry-run",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
     "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts --fix",
@@ -98,6 +98,9 @@
     "eslint-plugin-promise": "^6.1.1",
     "prettier": "^3.0.3",
     "start-server-and-test": "2.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
+    "vitest": "^0.34.6"
   }
 }
