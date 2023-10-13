@@ -3,10 +3,6 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "./src",
-    "types": [
-      "cypress",
-      "node"
-    ],
     "noEmit": false,
   },
   "exclude": [
