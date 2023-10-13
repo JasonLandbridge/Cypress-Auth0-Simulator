@@ -1,6 +1,4 @@
-import type { CreateSimulation, Person } from '../types';
 import { Auth0SDK } from '../types';
-import type { Auth0Result } from 'auth0-js';
 import { getConfig } from '../utils';
 import { registerGeneralCommands } from './general';
 import { registerAuth0JsCommands } from './auth0-js';
