@@ -28,9 +28,9 @@ export function getSimulationAtomSlice() {
  */
 export function getClientFromSpec(spec: string) {
   let client: Client;
-  const { auth0SimulatorPort } = getConfig();
+  const { auth0GraphqlPort } = getConfig();
   if (typeof atom.slice(spec).get()?.client?.createSimulation !== 'function') {
-    client = createClient(`http://localhost:${auth0SimulatorPort}`);
+    client = createClient(`http://localhost:${auth0GraphqlPort}`);
     atom.set({ [spec]: { client: client } });
   } else {
     client = atom.slice(spec, 'client').get();

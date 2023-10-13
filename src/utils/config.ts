@@ -11,12 +11,14 @@ interface Config {
   domain: string;
   sdk: Auth0SDK;
   auth0SimulatorPort: number;
+  auth0GraphqlPort: number;
 }
 
 export function getConfig(): Config {
   const auth0SimulatorPort = Cypress.env('AUTH0_SIMULATOR_PORT') ?? 4400;
   return {
     auth0SimulatorPort,
+    auth0GraphqlPort: Cypress.env('AUTH0_GRAPHQL_PORT') ?? 4000,
     sdk: Cypress.env('AUTH0_SDK'),
     // Auth0 sdk configuration
     audience: Cypress.env('AUTH0_AUDIENCE'),
