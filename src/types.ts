@@ -1,4 +1,3 @@
-import type { Slice } from '@effection/atom';
 import type { AuthOptions } from 'auth0-js';
 import type { Client, Simulation } from '@simulacrum/client';
 import { Auth0Result } from 'auth0-js';
@@ -51,14 +50,6 @@ export type TestState = Record<
 
 export type CreateSimulation = AuthOptions & { debug?: boolean };
 
-export interface Token {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  access_token: Record<string, any>;
-  expires_in: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  id_token: Record<string, any>;
-}
-
 export interface Person {
   email: string;
   password: string;
@@ -75,9 +66,4 @@ export interface EncryptPayload {
   accessTokenScope: string;
   accessTokenExpiresAt: number;
   createdAt: number;
-}
-
-export interface CommandMaker {
-  atom: Slice<TestState>;
-  getClientFromSpec: GetClientFromSpec;
 }
