@@ -32,6 +32,7 @@ declare global {
     }
   }
 }
+
 export const enum Auth0SDK {
   Auth0JS = 'auth0-js',
   Auth0Vue = 'auth0-vue',

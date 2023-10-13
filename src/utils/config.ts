@@ -33,12 +33,20 @@ export function getConfig(): Config {
 }
 
 export function configValidation(config: Config): void {
+  function isConfigKeyValid(key: keyof Config): boolean {
+    return config.hasOwnProperty(key) && config[key] !== '';
+  }
 
-    function isConfigKeyValid(key: keyof Config): boolean {
-        return config.hasOwnProperty(key) && config[key] !== '';
-    }
-
-    assert.isOk(isConfigKeyValid('sdk'), 'sdk is a required option in the config');
-    assert.isOk(isConfigKeyValid('clientID'), 'clientID is a required option in the config');
-    assert.isOk(isConfigKeyValid('scope'), 'scope is a required option in the config');
+  assert.isOk(
+    isConfigKeyValid('sdk'),
+    'sdk is a required option in the config',
+  );
+  assert.isOk(
+    isConfigKeyValid('clientID'),
+    'clientID is a required option in the config',
+  );
+  assert.isOk(
+    isConfigKeyValid('scope'),
+    'scope is a required option in the config',
+  );
 }

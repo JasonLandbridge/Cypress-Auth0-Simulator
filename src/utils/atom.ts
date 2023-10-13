@@ -1,25 +1,25 @@
-import { createAtom } from "@effection/atom";
-import type { Person, TestState } from "../types";
-import type { Client, Simulation } from "@simulacrum/client";
-import { createClient } from "@simulacrum/client";
-import { getConfig } from "./config";
+import { createAtom } from '@effection/atom';
+import type { Person, TestState } from '../types';
+import type { Client, Simulation } from '@simulacrum/client';
+import { createClient } from '@simulacrum/client';
+import { getConfig } from './config';
 
 const atom = createAtom<TestState>({});
 
 export function getAtom() {
-    return atom;
+  return atom;
 }
 
-export function getAtomSlice(name: "client" | "simulation" | "person") {
-    return atom.slice(Cypress.spec.name, name).get();
+export function getAtomSlice(name: 'client' | 'simulation' | 'person') {
+  return atom.slice(Cypress.spec.name, name).get();
 }
 
 export function getPersonAtomSlice() {
-    return getAtomSlice("person") as Person;
+  return getAtomSlice('person') as Person;
 }
 
 export function getSimulationAtomSlice() {
-    return getAtomSlice("simulation") as Simulation;
+  return getAtomSlice('simulation') as Simulation;
 }
 
 /**
@@ -27,17 +27,20 @@ export function getSimulationAtomSlice() {
  * @param spec The spec name to get the client from
  */
 export function getClientFromSpec(spec: string) {
-    let client: Client;
-    let { auth0SimulatorPort } = getConfig();
-    if (typeof atom.slice(spec).get()?.client?.createSimulation !== 'function') {
-        client = createClient(`http://localhost:${auth0SimulatorPort}`);
-        atom.set({ [spec]: { client: client } });
-    } else {
-        client = atom.slice(spec, 'client').get();
-    }
+  let client: Client;
+  const { auth0SimulatorPort } = getConfig();
+  if (typeof atom.slice(spec).get()?.client?.createSimulation !== 'function') {
+    client = createClient(`http://localhost:${auth0SimulatorPort}`);
+    atom.set({ [spec]: { client: client } });
+  } else {
+    client = atom.slice(spec, 'client').get();
+  }
 
-    // probably not needed but....good to know
-    assert(typeof client?.createSimulation === 'function', 'no client created in getClientFromSpec');
+  // probably not needed but....good to know
+  assert(
+    typeof client?.createSimulation === 'function',
+    'no client created in getClientFromSpec',
+  );
 
-    return client;
+  return client;
 }
