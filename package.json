@@ -80,6 +80,7 @@
   },
   "dependencies": {
     "@effection/atom": "2.0.7",
+    "@simulacrum/auth0-simulator": "^0.9.0",
     "auth0-js": "^9.23.0",
     "auth0-spa-js": "^1.6.5",
     "cross-fetch": "^4.0.0",
