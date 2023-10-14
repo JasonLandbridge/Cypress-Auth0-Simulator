@@ -1,6 +1,7 @@
 {
   "name": "cypress-auth0-simulator",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
   "description": "Auth0 integration plugin for Cypress",
   "private": false,
   "keywords": [
@@ -13,7 +14,6 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator.git",
-  "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
   "license": "MIT",
   "type": "module",
   "exports": {
