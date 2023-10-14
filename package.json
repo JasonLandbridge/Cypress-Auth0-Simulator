@@ -1,7 +1,14 @@
 {
   "name": "@jasonlandbridge/cypress-auth0-simulator",
   "version": "1.0.0",
-  "description": "Auth0 integration for Cypress",
+  "description": "Auth0 integration plugin for Cypress",
+  "private": false,
+  "keywords": [
+    "Auth0",
+    "Cypress",
+    "Mock",
+    "cypress-plugin"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,10 +39,14 @@
     }
   },
   "files": [
-    "src",
+    "dist",
     "CHANGELOG.md",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "cypress:browser": "cypress open",
     "start:server:cra": "cd ./examples/create-react-app && npm install && npm run start",
