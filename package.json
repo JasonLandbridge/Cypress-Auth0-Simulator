@@ -1,5 +1,5 @@
 {
-  "name": "@jasonlandbridge/cypress-auth0-simulator",
+  "name": "cypress-auth0-simulator",
   "version": "1.0.0",
   "description": "Auth0 integration plugin for Cypress",
   "private": false,
