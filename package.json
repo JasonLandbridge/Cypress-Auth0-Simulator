@@ -57,7 +57,8 @@
     "prepack": "tsc --build tsconfig.dist.json ",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
-    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts --fix"
+    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts --fix",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@effection/atom": "2.0.7",
@@ -69,6 +70,10 @@
     "jose": "^4.15.2"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.1",
+    "@semantic-release/npm": "^11.0.0",
     "@simulacrum/client": "^0.5.4",
     "@types/auth0-js": "^9.21.1",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
