@@ -10,12 +10,19 @@
     "Mock",
     "cypress-plugin"
   ],
+  "homepage": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator/issues"
+  },
+  "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator.git",
-  "license": "MIT",
-  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
