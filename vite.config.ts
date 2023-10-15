@@ -8,19 +8,25 @@ export const name = 'index';
 // Source: https://onderonur.netlify.app/blog/creating-a-typescript-library-with-vite/
 export default defineConfig({
   build: {
-    target: 'ESNext',
+    target: 'esnext',
     sourcemap: true,
-    outDir: 'dist',
+    emptyOutDir: true,
+    minify: false,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name,
+      entry: [
+        resolve(__dirname, 'src/index.ts'),
+        resolve(__dirname, 'src/commands/index.ts'),
+      ],
+      formats: ['es'],
       fileName: (format) => `${name}.${format}.js`,
-    },
-    // Source: https://github.com/vitejs/vite/issues/7821#issuecomment-1679416967
+    }, // Source: https://github.com/vitejs/vite/issues/7821#issuecomment-1679416967
     rollupOptions: {
-      output: {
-        inlineDynamicImports: true,
-      },
+      external: [
+        // ...Object.keys(pkg.dependencies), // don't bundle dependencies
+        //     '@effection/core',
+        // '@simulacrum/auth0-simulator',
+        /^node:.*/, // don't bundle built-in Node.js modules (use protocol imports!)
+      ],
     },
   },
   resolve: {

@@ -4,6 +4,7 @@
   "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
   "description": "Auth0 integration plugin for Cypress",
   "private": false,
+  "type": "module",
   "keywords": [
     "Auth0",
     "Cypress",
@@ -19,16 +20,18 @@
     "url": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator/issues"
   },
   "license": "MIT",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.es.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.es.js"
     },
-    "./commands/*": "./dist/commands/*"
+    "./commands": {
+      "import": "./dist/index.es2.js",
+      "require": "./dist/index.es2.js"
+    }
   },
   "typesVersions": {
     "*": {
@@ -72,7 +75,6 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@effection/atom": "2.0.7",
     "@simulacrum/auth0-simulator": "^0.9.0",
     "auth0-js": "^9.23.0",
     "auth0-spa-js": "^1.6.5",
@@ -82,6 +84,7 @@
     "jose": "^4.15.2"
   },
   "devDependencies": {
+    "@effection/atom": "^2.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
