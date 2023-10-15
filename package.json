@@ -28,14 +28,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./encrypt": {
-      "import": "./dist/utils/encrypt.js",
-      "require": "./dist/utils/encrypt.js"
-    },
-    "./commands": {
-      "import": "./dist/commands/index.js",
-      "require": "./dist/commands/index.js"
-    }
+    "./commands/*": "./dist/commands/*"
   },
   "typesVersions": {
     "*": {
@@ -89,6 +82,7 @@
     "jose": "^4.15.2"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.2.1",
@@ -105,6 +99,7 @@
     "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-promise": "^6.1.1",
     "prettier": "^3.0.3",
+    "rollup-plugin-node-polyfills": "^0.2.1",
     "rollup-plugin-polyfill-node": "^0.12.0",
     "start-server-and-test": "2.0.1",
     "typescript": "^5.2.2",

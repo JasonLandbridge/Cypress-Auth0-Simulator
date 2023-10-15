@@ -1,8 +1,8 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { builtinModules } from 'module';
 import nodePolyfills from 'rollup-plugin-polyfill-node';
+import nodeResolve from '@rollup/plugin-node-resolve';
 
 export const name = 'index';
 // Source: https://onderonur.netlify.app/blog/creating-a-typescript-library-with-vite/
@@ -21,9 +21,18 @@ export default defineConfig({
       output: {
         inlineDynamicImports: true,
       },
-      external: [...builtinModules, /^node:/],
     },
   },
-
-  plugins: [dts(), nodePolyfills()],
+  resolve: {
+    alias: {
+      events: 'rollup-plugin-node-polyfills/polyfills/events',
+    },
+  },
+  plugins: [
+    dts(),
+    nodeResolve(),
+    nodePolyfills({
+      include: ['events', 'crypto'],
+    }),
+  ],
 });
