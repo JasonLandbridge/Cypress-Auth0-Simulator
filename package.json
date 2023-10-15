@@ -1,12 +1,19 @@
 {
-  "name": "@jasonlandbridge/cypress-auth0-simulator",
-  "version": "1.0.0",
-  "description": "Auth0 integration for Cypress",
+  "name": "cypress-auth0-simulator",
+  "version": "0.0.1",
+  "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
+  "description": "Auth0 integration plugin for Cypress",
+  "private": false,
+  "keywords": [
+    "Auth0",
+    "Cypress",
+    "Mock",
+    "cypress-plugin"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/JasonLandbridge/Cypress-Auth0-Simulator.git",
-  "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -32,10 +39,14 @@
     }
   },
   "files": [
-    "src",
+    "dist",
     "CHANGELOG.md",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "cypress:browser": "cypress open",
     "start:server:cra": "cd ./examples/create-react-app && npm install && npm run start",
@@ -57,7 +68,8 @@
     "prepack": "tsc --build tsconfig.dist.json ",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
-    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts --fix"
+    "lint-fix": "eslint --ignore-path .eslintignore --ext .js,.ts --fix",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@effection/atom": "2.0.7",
@@ -69,6 +81,10 @@
     "jose": "^4.15.2"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.1",
+    "@semantic-release/npm": "^11.0.0",
     "@simulacrum/client": "^0.5.4",
     "@types/auth0-js": "^9.21.1",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
@@ -80,7 +96,6 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-promise": "^6.1.1",
-    "npm-run-all": "^4.1.5",
     "prettier": "^3.0.3",
     "start-server-and-test": "2.0.1",
     "typescript": "^5.2.2"

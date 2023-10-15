@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-import { encrypt } from './src/utils/encrypt';
+import { encrypt } from './src';
 import { config } from 'dotenv';
 
 export default defineConfig({
@@ -60,7 +60,7 @@ export default defineConfig({
 });
 
 function mergeEnvConfig(
-  configEnv: Record<string, any>,
+  configEnv: Record<string, string>,
   testMode: string,
 ): Record<string, string> {
   return {

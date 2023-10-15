@@ -36,7 +36,9 @@ export function getConfig(): Config {
 
 export function configValidation(config: Config): void {
   function isConfigKeyValid(key: keyof Config): boolean {
-    return config.hasOwnProperty(key) && config[key] !== '';
+    return (
+      Object.prototype.hasOwnProperty.call(config, key) && config[key] !== ''
+    );
   }
 
   assert.isOk(
