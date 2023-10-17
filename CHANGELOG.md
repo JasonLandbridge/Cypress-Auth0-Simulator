@@ -1,5 +1,12 @@
 Cypress Auth0 Simulator
 
+## [1.0.7](https://github.com/JasonLandbridge/Cypress-Auth0-Simulator/compare/v1.0.6...v1.0.7) (2023-10-17)
+
+
+### Bug Fixes
+
+* attempt [#2](https://github.com/JasonLandbridge/Cypress-Auth0-Simulator/issues/2) at fixing import errors when used in Cypress through build package ([5075dcb](https://github.com/JasonLandbridge/Cypress-Auth0-Simulator/commit/5075dcbaabe50cdf471879447ed2239853ff14de))
+
 ## [1.0.6](https://github.com/JasonLandbridge/Cypress-Auth0-Simulator/compare/v1.0.5...v1.0.6) (2023-10-17)
 
 
