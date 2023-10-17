@@ -1,6 +1,6 @@
 {
   "name": "cypress-auth0-simulator",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "author": "Jason Landbridge <jasonlandbridge@protonmail.com>",
   "description": "Auth0 integration plugin for Cypress",
   "private": false,
