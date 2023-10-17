@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "esnext",
     "types": [
       "cypress",
       "node"
     ],
+    "lib": ["es2016", "esnext", "dom"],
     "outDir": "dist",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
     "sourceMap": true,
-    "resolveJsonModule": true,
   },
   "include": [
     "src/**/*",
