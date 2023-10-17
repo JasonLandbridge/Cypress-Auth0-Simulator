@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
+    "target": "ES2015",
+    "module": "ES2020",
     "types": [
       "cypress",
       "node"
@@ -16,8 +16,7 @@
     "sourceMap": true,
   },
   "include": [
-    "src/**/*",
-    "node_modules/cypress/types"
+    "./src"
   ],
   "exclude": [
     "node_modules",
