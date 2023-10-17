@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.configValidation = exports.getConfig = void 0;
-function getConfig() {
+export function getConfig() {
     var _a, _b, _c, _d, _e, _f;
     const auth0SimulatorPort = (_a = Cypress.env('AUTH0_SIMULATOR_PORT')) !== null && _a !== void 0 ? _a : 4400;
     return {
@@ -20,8 +17,7 @@ function getConfig() {
         domain: `localhost:${auth0SimulatorPort}`,
     };
 }
-exports.getConfig = getConfig;
-function configValidation(config) {
+export function configValidation(config) {
     function isConfigKeyValid(key) {
         return (Object.prototype.hasOwnProperty.call(config, key) && config[key] !== '');
     }
@@ -29,5 +25,4 @@ function configValidation(config) {
     assert.isOk(isConfigKeyValid('clientID'), 'clientID is a required option in the config');
     assert.isOk(isConfigKeyValid('scope'), 'scope is a required option in the config');
 }
-exports.configValidation = configValidation;
 //# sourceMappingURL=config.js.map
